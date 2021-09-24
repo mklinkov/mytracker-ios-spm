@@ -6,7 +6,7 @@ let package = Package(
 	name: "MyTrackerSDK",
 	platforms:
 	[
-        .iOS(.v12)
+        .iOS("14.3")
 	],
 	products:
 	[
@@ -19,9 +19,9 @@ let package = Package(
 		.target(name: "MyTrackerSDKLib",
 				dependencies: ["MyTrackerSDK"],
 				path: "MyTrackerPackageWrapper",
-                
 				linkerSettings: [
 					.linkedLibrary("z"),
+					.linkedFramework("AdServices"),
 					.linkedFramework("UIKit"),
 					.linkedFramework("SystemConfiguration"),
 					.linkedFramework("CoreData"),
